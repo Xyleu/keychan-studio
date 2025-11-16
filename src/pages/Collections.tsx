@@ -20,25 +20,25 @@ const Collections = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <div className="pt-24 px-6 pb-12">
+      <div className="pt-8 px-6 pb-12">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}
           <div className="flex items-center justify-between mb-10">
             <div>
-              <h1 className="text-4xl font-bold mb-2">Trending Keychains</h1>
+              <h1 className="text-4xl font-bold mb-2 text-foreground">Trending Keychains</h1>
               <p className="text-muted-foreground">Discover amazing 3D keychain designs from our community</p>
             </div>
             
             {/* Time Filter */}
-            <div className="flex gap-2 glass rounded-lg p-1">
+            <div className="flex gap-2 bg-white rounded-lg p-1 border border-border">
               <Button
                 size="sm"
                 variant={filter === "today" ? "default" : "ghost"}
                 onClick={() => setFilter("today")}
-                className={filter === "today" ? "bg-primary hover:bg-primary/90" : ""}
+                className={filter === "today" ? "bg-primary hover:bg-primary/90 text-white" : ""}
               >
                 <Clock className="w-4 h-4 mr-1" />
                 Today
@@ -47,7 +47,7 @@ const Collections = () => {
                 size="sm"
                 variant={filter === "week" ? "default" : "ghost"}
                 onClick={() => setFilter("week")}
-                className={filter === "week" ? "bg-primary hover:bg-primary/90" : ""}
+                className={filter === "week" ? "bg-primary hover:bg-primary/90 text-white" : ""}
               >
                 <Calendar className="w-4 h-4 mr-1" />
                 Week
@@ -56,7 +56,7 @@ const Collections = () => {
                 size="sm"
                 variant={filter === "all" ? "default" : "ghost"}
                 onClick={() => setFilter("all")}
-                className={filter === "all" ? "bg-primary hover:bg-primary/90" : ""}
+                className={filter === "all" ? "bg-primary hover:bg-primary/90 text-white" : ""}
               >
                 <TrendingUp className="w-4 h-4 mr-1" />
                 All Time
@@ -69,7 +69,7 @@ const Collections = () => {
             {models.map((model) => (
               <div
                 key={model.id}
-                className="glass glass-hover rounded-xl overflow-hidden group cursor-pointer border border-glass-border"
+                className="bg-white rounded-xl overflow-hidden group cursor-pointer border border-border shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
               >
                 {/* Model Preview */}
                 <div className="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center relative overflow-hidden">
@@ -82,7 +82,7 @@ const Collections = () => {
                 <div className="p-5">
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h3 className="font-semibold text-lg mb-1">{model.title}</h3>
+                      <h3 className="font-semibold text-lg text-foreground">{model.title}</h3>
                       <p className="text-sm text-muted-foreground">by {model.creator}</p>
                     </div>
                     <Button

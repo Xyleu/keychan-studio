@@ -50,14 +50,14 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      <div className="pt-24 px-6 pb-12">
+      <div className="pt-12 px-6 pb-12">
         <div className="container mx-auto max-w-6xl">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mb-4">Simple, Transparent Pricing</h1>
+            <h1 className="text-5xl font-bold mb-4 text-foreground">Simple, Transparent Pricing</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose the perfect plan for your keychain creation needs
             </p>
@@ -68,10 +68,10 @@ const Pricing = () => {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`glass rounded-xl p-8 border ${
+                className={`bg-white rounded-xl p-8 border ${
                   plan.highlighted
-                    ? "border-primary cosmic-glow scale-105"
-                    : "border-glass-border glass-hover"
+                    ? "border-primary shadow-xl ring-2 ring-primary/20"
+                    : "border-border shadow-lg"
                 }`}
               >
                 {plan.highlighted && (
@@ -80,16 +80,16 @@ const Pricing = () => {
                   </div>
                 )}
                 
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
                   <span className="text-muted-foreground ml-2">/ {plan.period}</span>
                 </div>
 
                 <Button
                   className={`w-full mb-8 ${
                     plan.highlighted
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground cosmic-glow"
+                      ? "bg-primary hover:bg-primary/90 text-white"
                       : ""
                   }`}
                   variant={plan.highlighted ? "default" : "outline"}
@@ -101,7 +101,7 @@ const Pricing = () => {
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
