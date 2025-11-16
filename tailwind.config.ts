@@ -47,15 +47,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        glass: "rgba(34, 39, 46, 0.4)",
-        "glass-border": "rgba(255, 255, 255, 0.1)",
-      },
-      backgroundImage: {
-        'cosmic': 'linear-gradient(135deg, hsl(222 47% 4%) 0%, hsl(230 45% 8%) 50%, hsl(222 47% 4%) 100%)',
-        'hero': 'linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 47% 4%) 100%)',
-      },
-      backdropBlur: {
-        'glass': '20px',
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Layers3 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   const location = useLocation();
@@ -8,13 +9,12 @@ export const Navbar = () => {
   
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Create", path: "/create" },
     { name: "Collections", path: "/collections" },
     { name: "Pricing", path: "/pricing" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-glass-border">
+    <nav className="bg-white border-b border-border shadow-sm">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -22,11 +22,11 @@ export const Navbar = () => {
             <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
               <Layers3 className="w-6 h-6 text-primary" />
             </div>
-            <span className="text-xl font-bold tracking-tight">KEYCHAN</span>
+            <span className="text-xl font-bold tracking-tight text-foreground">KEYCHAN</span>
           </Link>
 
           {/* Nav Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -40,6 +40,9 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            <Button variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-white">
+              Sign In / Register
+            </Button>
           </div>
         </div>
       </div>
